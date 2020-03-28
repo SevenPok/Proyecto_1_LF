@@ -156,17 +156,41 @@ class AFD:
         else:
             return False
 
-a = AFD()
-a.agregarEstado('A')
-a.agregarEstado('B')
-a.agregarEstado('C')
-a.agregarAlfabeto('a')
-a.agregarAlfabeto('b')
-a.agregarAlfabeto('c')
-a.agregarEstadoInicial('A')
-a.agregarEstadosAceptacionn('B')
-a.agregarEstadosAceptacionn('C')
-a.modo1('A,B;a')
-a.modo1('B,B;b')
-a.modo1('B,C;c')
-print(a.validarCadenaModo1Ruta('abbc'))
+matriz = []
+estado = []
+alfabeto = []
+
+while True:
+    print('1. Ingresar estado')
+    print('2. Ingresar alfabeto')
+    print('3. Mostrar matriz')
+    print('4. salir')
+    print()
+    entrada = input()
+    if entrada == '1':
+        print('ingrese estado: ',end='')
+        cadena = input()
+        estado.append(cadena)
+        if len(matriz) is 0:
+            matriz.append([])
+        else:
+            subLista = []
+            for i in matriz[0]:
+                subLista.append(None)
+            matriz.append(subLista)
+        input()
+    elif entrada == '2':
+        print('ingrese alfabeto: ',end='')
+        cadena = input()
+        alfabeto.append(cadena)
+        if len(matriz) is 0:
+            matriz.append([None])
+        else:
+            for i in matriz:
+                i.append(None)
+        input()
+    elif entrada == '3':
+        print(matriz)
+        input()
+    elif entrada == '4':
+        break

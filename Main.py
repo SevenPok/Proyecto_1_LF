@@ -1,6 +1,5 @@
 import os
-import CrearAFD
-import EvaluarCadena
+import MenuCrearDFA
 
 def main():
     os.system('cls')
@@ -19,11 +18,11 @@ def main():
         print('')
         entrada = input()
         if entrada == '1':
-            CrearAFD.main()
+            MenuCrearDFA.main()
         elif entrada == '2':
             pass
         elif entrada == '3':
-            EvaluarCadena.main()
+            pass
         elif entrada == '4':
             pass
         elif entrada == '5':

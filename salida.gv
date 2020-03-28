@@ -1,0 +1,17 @@
+digraph salida {
+	rankdir=LR size="8,5"
+	node [shape=circle]
+	"Ñ"
+	P
+	B
+	node [shape=doublecircle]
+	C
+	"Ñ" -> C [label=o]
+	P -> C [label=p]
+	P -> B [label=o]
+	B -> "Ñ" [label=n]
+	B -> B [label=r]
+	node [shape=none]
+	edge [arrowhead=empty arrowsize=1.5]
+	"" -> P
+}

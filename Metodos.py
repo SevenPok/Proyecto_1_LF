@@ -1,4 +1,5 @@
 import os
+from reportlab.pdfgen import canvas
 
 def crearMatriz(f,c):
     lista = []
