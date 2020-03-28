@@ -214,5 +214,57 @@ class CrearDFA:
                 print('|')
                 
 
+    def evaluar(self, cadena):
+        try:
+            i = self.__automata.getEstadoInicial()
+            for caracter in cadena:
+                i = self.__automata.getEstado().index(i)
+                j = self.__automata.getAlfabeto().index(caracter)
+                if self.__automata.getMatriz()[i][j] != None:
+                    i = self.__automata.getMatriz()[i][j]
+                else:
+                    return False
+            if i in self.__automata.getEstadoAceptacion():
+                return True
+            else:
+                return False
+        except:
+            return False
 
+    def rutaEvaluar(self, cadena):
+        try:
+            i = self.__automata.getEstadoInicial()
+            ruta = ''
+            for caracter in cadena:
+                i = self.__automata.getEstado().index(i)
+                j = self.__automata.getAlfabeto().index(caracter)
+                if self.__automata.getMatriz()[i][j] != None:
+                    ruta += self.__automata.getEstado()[i] + ','
+                    i = self.__automata.getMatriz()[i][j]
+                    ruta += i + ',' + caracter + ';'
+                else:
+                    return False
+            if i in self.__automata.getEstadoAceptacion():
+                print(ruta)
+                return True
+            else:
+                return False
+        except:
+            return False
+
+
+a = CrearDFA()
+a.addEstado('A')
+a.addEstado('B')
+a.addAlfabeto('0')
+a.addAlfabeto('1')
+a.addEstadoInicial('A')
+a.addEstadoAceptacion('A')
+a.modo1('A,B;0')
+a.modo1('A,A;1')
+a.modo1('B,B;0')
+a.modo1('B,A;1')
+a.mostrar()
+print()
+a.rutaEvaluar('101010511101')
 

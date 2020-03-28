@@ -1,5 +1,6 @@
 import os
 import MenuCrearDFA
+import MenuEvaluar
 
 def main():
     os.system('cls')
@@ -22,7 +23,7 @@ def main():
         elif entrada == '2':
             pass
         elif entrada == '3':
-            pass
+            MenuEvaluar.main()
         elif entrada == '4':
             pass
         elif entrada == '5':
